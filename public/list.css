@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4b3db9;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #4b3db9;
+  color: white;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #372c91;
+}
+
+.table-container {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.table-container h3 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 14px;
+}
+
+table th {
+  background-color: #f4f6f8;
+  font-weight: 600;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.form-container .back-button-container {
+  display: flex;
+  justify-content: center;  
+  margin-top: 20px;
+}
+
+.back-button {
+  text-decoration: none;
+  background-color: #4b3db9;
+  color: white;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #372c91;
+}
+

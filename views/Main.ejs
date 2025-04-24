@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edubase</title>
+  <link rel="stylesheet" href="Main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-circle">E</div>
+      <span class="logo-text">Edubase</span>
+    </div>
+
+    <ul class="menu">
+      <li class="active"><i class="fas fa-home"></i> Home</li>
+      <li><a href="/listSchools"><i class="fa-solid fa-magnifying-glass-location"></i> Search</a></li>
+      <li><i class="fa-solid fa-id-badge"></i> Contact</li>
+    </ul>
+
+    <div class="footer">
+      <p>Edubase project</p>
+      <p>Made By Nithishvar.D</p>
+    </div>
+  </div>
+
+<div class="mobile-nav">
+    <div class="mobile-logo" onclick="toggleMobileMenu()">
+      <div class="logo-circle">E</div>
+      <span class="logo-text">Edubase</span>
+      <i class="fas fa-chevron-down dropdown-icon"></i>
+    </div>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li>Homepage</li>
+      <li>Search School</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+  
+
+  <div id="newschl">
+    <div class="form-container">
+      <h2>Add New School</h2>
+      <form method="POST" id="schoolForm">
+        <div class="form-group">
+          <label for="name">School Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter school name" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter school address" required></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="latitude">Latitude</label>
+          <input type="text" id="latitude" name="latitude" placeholder="e.g. 12.9716" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="longitude">Longitude</label>
+          <input type="text" id="longitude" name="longitude" placeholder="e.g. 77.5946" required />
+        </div>
+        <button type="submit" formaction="/addSchool">Submit</button>
+      </form>
+    </div>
+  </div>
+  
+  <% let alertSuccess = typeof success !== 'undefined' ? success : null; %>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const success = "<%= alertSuccess %>";
+  
+      if (success === "true") {
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'School created successfully!',
+          confirmButtonColor: '#3085d6'
+        });
+      } else if (success === "false") {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed to create school.',
+          confirmButtonColor: '#d33'
+        });
+      }
+    });
+  </script>
+  
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+  </script>
+  
+</body>
+</html>
